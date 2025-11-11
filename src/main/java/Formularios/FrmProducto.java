@@ -8,8 +8,7 @@ public class FrmProducto extends javax.swing.JInternalFrame {
 
     public FrmProducto() {
         initComponents();
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.MostrarProducto(tbProductos);
+
         txtIdProducto.setEnabled(false);
     }
 
@@ -48,11 +47,7 @@ public class FrmProducto extends javax.swing.JInternalFrame {
         jLabel4.setText("Stock:");
 
         btnLimpiarCampos.setText("Limpiar Campos");
-        btnLimpiarCampos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarCamposActionPerformed(evt);
-            }
-        });
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,35 +105,19 @@ public class FrmProducto extends javax.swing.JInternalFrame {
 
                 }
         ));
-        tbProductos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbProductosMouseClicked(evt);
-            }
-        });
+
         jScrollPane1.setViewportView(tbProductos);
 
         jLabel5.setText("Click para seleccionar");
 
         btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
+
 
         btnModificar.setText("Modificar");
-        btnModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarActionPerformed(evt);
-            }
-        });
+
 
         btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,38 +157,6 @@ public class FrmProducto extends javax.swing.JInternalFrame {
         );
 
         pack();
-    }
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.AgregarProducto(txtNombreProducto, txtPrecioProducto, txtStockProducto);
-        objetoProducto.MostrarProducto(tbProductos);
-        objetoProducto.limpiarCamposProducto(txtIdProducto, txtNombreProducto, txtPrecioProducto, txtStockProducto);
-    }
-
-    private void tbProductosMouseClicked(java.awt.event.MouseEvent evt) {
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.Seleccionar(tbProductos, txtIdProducto,txtNombreProducto, txtPrecioProducto, txtStockProducto);
-    }
-
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.ModificarProducto(txtIdProducto, txtNombreProducto, txtPrecioProducto, txtStockProducto);
-        objetoProducto.MostrarProducto(tbProductos);
-        objetoProducto.limpiarCamposProducto(txtIdProducto, txtNombreProducto, txtPrecioProducto, txtStockProducto);
-    }
-
-    private void btnLimpiarCamposActionPerformed(java.awt.event.ActionEvent evt) {
-
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.limpiarCamposProducto(txtIdProducto, txtNombreProducto, txtPrecioProducto, txtStockProducto);
-    }
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
-        Controlador.ControladorProducto objetoProducto = new Controlador.ControladorProducto();
-        objetoProducto.EliminarProductos(txtIdProducto);
-        objetoProducto.MostrarProducto(tbProductos);
-        objetoProducto.limpiarCamposProducto(txtIdProducto, txtNombreProducto, txtPrecioProducto, txtStockProducto);
     }
 
     private javax.swing.JButton btnEliminar;
